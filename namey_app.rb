@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra/sequel'
 require 'namey'
 require 'json'
 
@@ -11,31 +10,13 @@ class Hash
     self
   end
 end
-
-
-# Establish the database connection; or, omit this and use the DATABASE_URL
-# environment variable as the connection string:
-#set :database, 'mysql://username@hostname/database'
-
-
-#
-# migration for logging names
-#
-migration "create the generated_names table" do
-  database.create_table :generated_names do
-    primary_key :id
-    String :name, :null => false
-    timestamp   :created_at, :null => false
-  end
-end
   
 get '/' do
-  # use index.haml for readme
-  erb :index #, :layout => :index
+  erb :index
 end
   
 get '/name.?:format?' do
-  @generator = Namey::Generator.new(database)
+  @generator = Namey::Generator.new
 
   opts = {
     :frequency => :common
@@ -59,10 +40,6 @@ get '/name.?:format?' do
   names = 1.upto(count).collect do
     @generator.generate(opts)
   end.compact
-
-  names.each do |name|
-    database[:generated_names].insert(:name => name)
-  end
   
   if params[:format] == "json"
     content_type :json, 'charset' => 'utf-8'

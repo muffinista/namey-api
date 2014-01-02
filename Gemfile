@@ -1,12 +1,7 @@
 source 'https://rubygems.org'
-source 'http://gemcutter.org'
 
-gem "sinatra"
-gem "sinatra-sequel"
-gem "mysql"
-gem "sequel"
+gem "sinatra", "~> 1.4.4"
 gem "json"
-
 gem "shotgun"
 
-gem "namey"
+gem "namey", :git => "git@github.com:muffinista/namey.git"

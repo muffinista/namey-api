@@ -6,198 +6,214 @@
     <title>Namey - A random name generator</title>
     <meta name="description" content="a simple tool for generating random names">
     <meta name="author" content="Colin Mitchell">
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-	<script>
-	  google.load("jquery", "1.6.4");
-	</script>
-	<script type="text/javascript" src="/api.js"></script>
-	<script type="text/javascript" src="/ui.js"></script>
-
-    <!-- Le styles -->
-    <link href="/bootstrap.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="/namey.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 	<!---
        <link rel="shortcut icon" href="images/favicon.ico">
 	   --->
   </head>
 
   <body>
-    <div class="container">
-
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
+    <div class="jumbotron">
+      <div class="container">
         <h1>Namey! <small>A random name generator</small></h1>
-		<p>Welcome to Namey, your friendly neighborhood random name
-		  generator. It uses the 
-		  <a href="http://www.census.gov/genealogy/names/">US Census
-			Bureau database</a> of first and last names to generate random
-		  names. You can specify gender, whether you want a common or
-		  rare name, and so on. It's pretty easy, so... Lets make
-		  some names!</p>
+		    <p>Welcome to Namey, your friendly neighborhood random name
+		      generator. It uses the 
+		      <a href="http://www.census.gov/genealogy/www/data/1990surnames/index.html">US Census
+			      Bureau database</a> of first and last names to generate random
+		      names. You can specify gender, whether you want a common or
+		      rare name, and so on. It's pretty easy, so... Lets make
+		      some names!</p>
       </div>
+    </div>
+    
+    <div class="container">
+	    <section id="forms">
+		    <div class="page-header">
+		      <h1>Options <small>What sort of names do you want?</small></h1>
+		    </div>
 
-	  <section id="forms">
-		<div class="page-header">
-		  <h1>Options <small>What sort of names do you want?</small></h1>
-		</div>
+		    <div class="row">
+		      <div class="col-md-6">
+			      <form id="name-params" class="form-horizontal" role="form">
+			        <fieldset>
+				          <label id="type-opts">Name Type</label>
+				          <div class="radio">
+					          <ul class="inputs-list">
+					            <li>
+						            <label>
+						              <input type="radio" checked name="type" value="both" />
+						              <span>Any Gender</span>
+						            </label>
+					            </li>
+					            <li>
+						            <label>
+						              <input type="radio" name="type" value="female" />
+						              <span>Female</span>
+						            </label>
+					            </li>
+					            <li>
+						            <label>
+						              <input type="radio" name="type" value="male" />
+						              <span>Male</span>
+						            </label>
+					            </li>
+					            <li>
+						            <label>
+						              <input type="radio" name="type" value="surname" />
+						              <span>Just a surname</span>
+						            </label>
+					            </li>
+					          </ul>
+				          </div>
 
-		<div class="row">
-		  <div class="span8">
-			<form id="name-params" class="form-stacked">
-			  <fieldset>
-				<div class="clearfix">
-				  <label id="type-opts">Name Type</label>
-				  <div class="input">
-					<ul class="inputs-list">
-					  <li>
-						<label>
-						  <input type="radio" checked name="type" value="both" />
-						  <span>Any Gender</span>
-						</label>
-					  </li>
-					  <li>
-						<label>
-						  <input type="radio" name="type" value="female" />
-						  <span>Female</span>
-						</label>
-					  </li>
-					  <li>
-						<label>
-						  <input type="radio" name="type" value="male" />
-						  <span>Male</span>
-						</label>
-					  </li>
-					  <li>
-						<label>
-						  <input type="radio" name="type" value="surname" />
-						  <span>Just a surname</span>
-						</label>
-					  </li>
-					</ul>
-				  </div>
-				</div><!-- /clearfix -->
+                
+				        <div class="surname-wrapper">
+				          <div class="checkbox">
+					          <ul class="inputs-list">
+					            <li>
+						            <label>
+						              <input type="checkbox" name="with_surname" value="true" checked />
+						              <span>Include a surname?</span>
+						            </label>
+					            </li>
+					          </ul>
+					          <span class="help-block">
+					            <strong>Note:</strong> If you uncheck this, you'll only get a first name.
+					          </span>
+				          </div>
+				        </div><!-- /clearfix -->
+                
+				        <div>
+				          <label id="optionsRadio">Name Frequency</label>
+				          <div class="radio">
+					          <ul class="inputs-list">
+					            <li>
+						            <label>
+						              <input type="radio" checked name="frequency" value="common" />
+						              <span>'Common' names</span>
+						            </label>
+					            </li>
+					            <li>
+						            <label>
+						              <input type="radio" name="frequency" value="rare" />
+						              <span>Rare names</span>
+						            </label>
+					            </li>
+					            <li>
+						            <label>
+						              <input type="radio" name="frequency" value="all" />
+						              <span>All names</span>
+						            </label>
+					            </li>
+					            <li>
+						            <label>
+						              <input type="radio" name="frequency" value="custom" />
+						              <span>Custom range </span>
+                          
+						              <span class="custom_range_wrapper form-group">
+							              <label for="min_freq" class="col-sm-1 control-label">From:</label>
+                            <div class="col-sm-4">
+                              <input class="form-control disabled"
+                              id="min_freq" name="min_freq"
+                              type="text" placeholder="(1-100)"
+                              disabled />
+                            </div>
+							              <label for="max_freq" class="col-sm-1 control-label">To:</label>
+							              <div class="col-sm-4">
+                              <input class="form-control disabled"
+                                     id="max_freq" name="max_freq"
+                                     type="text" placeholder="(1-100)"
+                                     disabled />
+                            </div>
+					                  <span class="help-block">
+                              <br />
+							                <small>(1 is super-common, 100 is
+							                super-rare)</small>
+                            </span>
 
-				<div class="clearfix surname-wrapper">
-				  <div class="input">
-					<ul class="inputs-list">
-					  <li>
-						<label>
-						  <input type="checkbox" name="with_surname" value="true" checked />
-						  <span>Include a surname?</span>
-						</label>
-					  </li>
-					</ul>
-					<span class="help-block">
-					  <strong>Note:</strong> If you uncheck this, you'll only get a first name.
-					</span>
-				  </div>
-				</div><!-- /clearfix -->
+						              </span>
+						            </label>
+					            </li>
+					          </ul>
+				          </div>
+				        </div><!-- /clearfix -->
 
-				<div class="clearfix">
-				  <label id="optionsRadio">Name Frequency</label>
-				  <div class="input">
-					<ul class="inputs-list">
-					  <li>
-						<label>
-						  <input type="radio" checked name="frequency" value="common" />
-						  <span>'Common' names</span>
-						</label>
-					  </li>
-					  <li>
-						<label>
-						  <input type="radio" name="frequency" value="rare" />
-						  <span>Rare names</span>
-						</label>
-					  </li>
-					  <li>
-						<label>
-						  <input type="radio" name="frequency" value="all" />
-						  <span>All names</span>
-						</label>
-					  </li>
-					  <li>
-						<label>
-						  <input type="radio" name="frequency" value="custom" />
-						  <span>Custom range </span>
+                
+				        <div>
+				          <label for="count">How many names to generate?</label>
+				          <div class="input">
+					          <select name="count" id="count" class="form-control">
+					            <option>1</option>
+					            <option>2</option>
+					            <option>3</option>
+					            <option>4</option>
+					            <option>5</option>
+					          </select>
+				          </div>
+				        </div><!-- /clearfix -->
+                
+				        <div>
+                  <button type="submit" class="btn btn-primary">Let's go!</button>
+				          <span class="spinny"><img src="/ajax-loader.gif" /></span>
+				        </div>
+			        </fieldset>
+			      </form>
+		      </div>
 
-						  <span class="custom_range_wrapper">
-							- From: <input class="span2 disabled" id="min_freq" name="min_freq" type="text" placeholder="(1-100)" disabled />
-							To: <input class="span2 disabled" id="max_freq" name="max_freq" type="text" placeholder="(1-100)" disabled /><br />
-							<small>(1 is super-common, 100 is super-rare)</small>
-						  </span>
-						</label>
-					  </li>
-					</ul>
-				  </div>
-				</div><!-- /clearfix -->
-
-
-				<div class="clearfix">
-				  <label for="count">How many names to generate?</label>
-				  <div class="input">
-					<select name="count" id="count">
-					  <option>1</option>
-					  <option>2</option>
-					  <option>3</option>
-					  <option>4</option>
-					  <option>5</option>
-					</select>
-				  </div>
-				</div><!-- /clearfix -->
-
-				<div class="clearfix">
-				  <input type="submit" class="btn primary" value="Let's go!">
-				  <span class="spinny"><img src="/ajax-loader.gif" /></span>
-				</div>
-			  </fieldset>
-			</form>
-		  </div>
-
-		  <div class="span8" id="results">
-			<form id="name-results" class="form-stacked">
-			  <label for="nameList" class="biglabel">Results:</label>
-			  <fieldset>
-				<div class="clearfix">
-				  <div class="input">
-					<textarea class="large" name="nameList" id="nameList" rows="5"></textarea>
-				  </div>
-				</div><!-- /clearfix -->
-			  </fieldset>
-			</form>
-		  </div>
-		</div><!-- /row -->
-	  </section>
-
-	  <section id="about">
-		<div class="row">
-          <div class="span5">
-			<h2>Open Source</h2>
-			<p>Namey is powered by a ruby gem. The code is totally open source, do what you
-			  like with it! <a href="https://github.com/muffinista/namey">Check it out on github</a></p>
-		  </div>
-          <div class="span6">
-			<h2>I have an API!</h2>
-			<p>Are you a nerd? Do you like APIs? You're in luck! Namey
-			  has a <a href="/api.js">Javascript API</a> available so
-			  you can generate names however you would like.</p>
+		      <div class="col-md-6" id="results">
+			      <form id="name-results" class="form-horizontal">
+			        <label for="nameList" class="biglabel">Results:</label>
+			        <fieldset>
+				          <div class="input">
+					          <textarea class="form-control" name="nameList" id="nameList" rows="5"></textarea>
+				          </div>
+			        </fieldset>
+			      </form>
+		      </div>
+		    </div><!-- /row -->
+	    </section>
+      
+	    <section id="about">
+		    <div class="row">
+          <div class="col-md-4">
+			      <h2>Open Source</h2>
+			      <p>Namey is powered by a ruby gem. The code is totally open source, do what you
+			        like with it! <a href="https://github.com/muffinista/namey">Check it out on github</a></p>
+		      </div>
+          <div class="col-md-4">
+			      <h2>I have an API!</h2>
+			      <p>Are you a nerd? Do you like APIs? You're in luck! Namey
+			        has a <a href="/api.js">Javascript API</a> available so
+			        you can generate names however you would like.</p>
           </div>
-          <div class="span5">
-			<h2>Muffinlabs</h2>
-			<p>Namey is
-			  a <a href="http://muffinlabs.com">muffinlabs</a>
-			  production. Please visit anytime!</p>
+          <div class="col-md-4">
+			      <h2>Muffinlabs</h2>
+			      <p>Namey is
+			        a <a href="http://muffinlabs.com">muffinlabs</a>
+			        production. Please visit anytime!</p>
           </div>
-		</div>
-	  </section>
+		    </div>
+	    </section>
 
       <footer>
-        <p>&copy; Colin Mitchell 2011, <a href="http://muffinlabs.com">http://muffinlabs.com</a></p>
+        <p>&copy; Colin Mitchell 2014, <a href="http://muffinlabs.com">http://muffinlabs.com</a></p>
       </footer>
     </div> <!-- /container -->
+
+    <script src="js/bootstrap.min.js"></script>
+	  <script src="/api.js"></script>
+	  <script src="/ui.js"></script>
   </body>
 </html>
