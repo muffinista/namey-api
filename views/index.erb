@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- shamelessly stolen from view-source:http://twitter.github.com/bootstrap/examples/hero.html -->
   <head>
     <meta charset="utf-8">
     <title>Namey - A random name generator</title>
@@ -18,10 +17,6 @@
     <![endif]-->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-	<!---
-       <link rel="shortcut icon" href="images/favicon.ico">
-	   --->
   </head>
 
   <body>
@@ -190,7 +185,7 @@
           <div class="col-md-4">
 			      <h2>Open Source</h2>
 			      <p>Namey is powered by a ruby gem. The code is totally open source, do what you
-			        like with it! <a href="https://github.com/muffinista/namey">Check it out on github</a></p>
+			        like with it! <a href="https://github.com/muffinista/namey">Check it out on github</a>.</p>
 		      </div>
           <div class="col-md-4">
 			      <h2>I have an API!</h2>
@@ -215,5 +210,16 @@
     <script src="js/bootstrap.min.js"></script>
 	  <script src="/api.js"></script>
 	  <script src="/ui.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-98596-12']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>
