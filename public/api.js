@@ -44,8 +44,8 @@ namey = {
     get : function(options) {
 	      var callback;
 	      var tmp_params = {};
-//        var host = "namey.muffinlabs.com";
-        var host = window.location.host;
+        var host = "namey.muffinlabs.com";
+        //var host = window.location.host;
 
 	      if ( typeof(options) == "function" ) {
 	          callback = options;
