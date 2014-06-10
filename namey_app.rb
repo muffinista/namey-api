@@ -2,6 +2,9 @@ require 'sinatra'
 require 'namey'
 require 'json'
 
+#set :protection, :except => [:json_csrf]
+disable :protection
+
 class Hash
   def symbolize_keys!
     keys.each do |key|
@@ -16,7 +19,7 @@ get '/' do
 end
   
 get '/name.?:format?' do
-  @generator = Namey::Generator.new
+  @generator = Namey::Generator.new(ENV['DATABASE_URL'])
 
   opts = {
     :frequency => :common

@@ -1,6 +1,6 @@
 GIT
-  remote: git@github.com:muffinista/namey.git
-  revision: 226f839a8df7e88c38fe3398932867165c39da11
+  remote: https://github.com/muffinista/namey.git
+  revision: 7ab43687553a8bea08faacc36ab9ed1785e70657
   specs:
     namey (0.0.11)
       sequel
@@ -10,17 +10,18 @@ GEM
   remote: https://rubygems.org/
   specs:
     json (1.8.1)
+    mysql (2.9.1)
     rack (1.5.2)
     rack-protection (1.5.1)
       rack
-    sequel (4.5.0)
+    sequel (4.11.0)
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.4.4)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
-    sqlite3 (1.3.8)
+    sqlite3 (1.3.9)
     tilt (1.4.1)
 
 PLATFORMS
@@ -28,6 +29,7 @@ PLATFORMS
 
 DEPENDENCIES
   json
+  mysql
   namey!
   shotgun
   sinatra (~> 1.4.4)
