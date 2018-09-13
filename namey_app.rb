@@ -2,6 +2,9 @@ require 'sinatra'
 require 'namey'
 require 'json'
 
+#set :protection, :except => [:json_csrf]
+disable :protection
+
 class Hash
   def symbolize_keys!
     keys.each do |key|
@@ -16,7 +19,8 @@ get '/' do
 end
   
 get '/name.?:format?' do
-  @generator = Namey::Generator.new
+  @db =  Sequel.connect(ENV['DATABASE_URL'])
+  @generator = Namey::Generator.new(@db)
 
   opts = {
     :frequency => :common
@@ -40,7 +44,9 @@ get '/name.?:format?' do
   names = 1.upto(count).collect do
     @generator.generate(opts)
   end.compact
-  
+
+  @db.disconnect
+
   if params[:format] == "json"
     content_type :json, 'charset' => 'utf-8'
     tmp = JSON.generate names
