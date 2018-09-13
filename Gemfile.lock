@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/muffinista/namey.git
-  revision: 6446c34f11c28b807fa131edb79662462d73c254
+  revision: 10e62cba0bab2603f95ad454f752c1dc93685461
   specs:
     namey (0.0.12)
       sequel (~> 5.0.0)
