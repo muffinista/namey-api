@@ -1,5 +1,5 @@
 /** namey */
-namey = {
+window.namey = {
 
     /*
      * Lightweight JSONP fetcher
