@@ -1,10 +1,8 @@
 require 'rubygems'
-#require 'dotenv/load'
 require 'sinatra'
 require 'namey'
 require 'json'
 
-#set :protection, :except => [:json_csrf]
 disable :protection
 
 class Hash
@@ -21,18 +19,13 @@ get '/' do
 end
   
 get '/name.?:format?' do
-  @db =  Sequel.connect(ENV['DATABASE_URL'])
-  @generator = Namey::Generator.new(@db)
-
+  @generator = Namey::Generator.new
+  
   opts = {
     :frequency => :common
-  }.merge(params.symbolize_keys!)
+  }.merge(params.to_h.symbolize_keys!)
 
-  if params[:with_surname] == "true"
-    opts[:with_surname] = true
-  else
-    opts[:with_surname] = false
-  end
+  opts[:with_surname] = (params[:with_surname] == true || params[:with_surname] == "true")
 
   [:type, :frequency].each do |key|
     opts[key] = opts[key].to_sym if opts.has_key?(key)
@@ -42,12 +35,10 @@ get '/name.?:format?' do
   
   count = (params.delete(:count) || 1).to_i
   count = 10 if count > 10
-  
+
   names = 1.upto(count).collect do
     @generator.generate(opts)
   end.compact
-
-  @db.disconnect
 
   if params[:format] == "json"
     content_type :json, 'charset' => 'utf-8'
