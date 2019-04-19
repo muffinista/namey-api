@@ -1,3 +1,5 @@
+require 'rubygems'
+#require 'dotenv/load'
 require 'sinatra'
 require 'namey'
 require 'json'

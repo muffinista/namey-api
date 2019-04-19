@@ -42,3 +42,14 @@ footer {
     padding-top:20px;
     border-top: 1px solid #eee;
 }
+
+fieldset > div {
+  margin-bottom: 1rem;
+}
+fieldset > div > label {
+  margin-bottom: 0px;
+}
+#name-params div.radio {
+  padding-top: 0px;
+}
+

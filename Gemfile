@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem "mysql"
-gem "sinatra", "~> 1.4.7"
-gem "json", "~> 1.8.3"
+#gem "mysql"
+gem "sqlite3"
+gem "sinatra", "~> 2.0.5"
 
 group :development do
   gem "shotgun"

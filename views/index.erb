@@ -18,11 +18,11 @@
         <h1>Namey! <small>A random name generator</small></h1>
 		    <p>Welcome to Namey, your friendly neighborhood random name
 		      generator. It uses the 
-		      <a href="http://www.census.gov/genealogy/www/data/1990surnames/index.html">US Census
-			      Bureau database</a> of first and last names to generate random
-		      names. You can specify gender, whether you want a common or
-		      rare name, and so on. It's pretty easy, so... Lets make
-		      some names!</p>
+		      <a href="https://www.census.gov/topics/population/genealogy/data/1990_census/1990_census_namefiles.html">US Census
+			      Bureau database</a> of first and last names to generate
+		      random names. You can specify a few options for the sort of
+		      name you would like to get. It's pretty easy, so... Lets
+		      make some names!</p>
       </div>
     </div>
     
@@ -35,56 +35,9 @@
 		    <div class="row">
 		      <div class="col-md-6">
 			      <form id="name-params" class="form-horizontal" role="form">
-			        <fieldset>
-				          <label id="type-opts">Name Type</label>
-				          <div class="radio">
-					          <ul class="inputs-list">
-					            <li>
-						            <label>
-						              <input type="radio" checked name="type" value="both" />
-						              <span>Any Gender</span>
-						            </label>
-					            </li>
-					            <li>
-						            <label>
-						              <input type="radio" name="type" value="female" />
-						              <span>Female</span>
-						            </label>
-					            </li>
-					            <li>
-						            <label>
-						              <input type="radio" name="type" value="male" />
-						              <span>Male</span>
-						            </label>
-					            </li>
-					            <li>
-						            <label>
-						              <input type="radio" name="type" value="surname" />
-						              <span>Just a surname</span>
-						            </label>
-					            </li>
-					          </ul>
-				          </div>
-
-                
-				        <div class="surname-wrapper">
-				          <div class="checkbox">
-					          <ul class="inputs-list">
-					            <li>
-						            <label>
-						              <input type="checkbox" name="with_surname" value="true" checked />
-						              <span>Include a surname?</span>
-						            </label>
-					            </li>
-					          </ul>
-					          <span class="help-block">
-					            <strong>Note:</strong> If you uncheck this, you'll only get a first name.
-					          </span>
-				          </div>
-				        </div><!-- /clearfix -->
-                
+			        <fieldset>               
 				        <div>
-				          <label id="optionsRadio">Name Frequency</label>
+				          <label id="optionsRadio">Frequency</label>
 				          <div class="radio">
 					          <ul class="inputs-list">
 					            <li>
@@ -128,15 +81,64 @@
 					                  <span class="help-block">
                               <br />
 							                <small>(1 is super-common, 100 is
-							                super-rare)</small>
+							                  super-rare)</small>
                             </span>
-
 						              </span>
 						            </label>
 					            </li>
 					          </ul>
 				          </div>
 				        </div><!-- /clearfix -->
+
+                <div>
+				          <label id="type-opts">Name Type</label>
+				          <div class="radio">
+					          <ul class="inputs-list">
+					            <li>
+						            <label>
+						              <input type="radio" checked name="type" value="both" />
+						              <span>Any Gender</span>
+						            </label>
+					            </li>
+					            <li>
+						            <label>
+						              <input type="radio" name="type" value="female" />
+						              <span>Female</span>
+						            </label>
+					            </li>
+					            <li>
+						            <label>
+						              <input type="radio" name="type" value="male" />
+						              <span>Male</span>
+						            </label>
+					            </li>
+					            <li>
+						            <label>
+						              <input type="radio" name="type" value="surname" />
+						              <span>Just a surname</span>
+						            </label>
+					            </li>
+					          </ul>
+				          </div>
+                </div>
+
+                
+				        <div class="surname-wrapper">
+				          <div class="checkbox">
+					          <ul class="inputs-list">
+					            <li>
+						            <label>
+						              <input type="checkbox" name="with_surname" value="true" checked />
+						              <span>Include a surname?</span>
+						            </label>
+					            </li>
+					          </ul>
+					          <span class="help-block">
+					            <strong>Note:</strong> If you uncheck this, you'll only get a first name.
+					          </span>
+				          </div>
+				        </div><!-- /clearfix -->
+
                 
 				        <div>
 				          <label for="count">How many names to generate?</label>
@@ -195,7 +197,7 @@
 	    </section>
 
       <footer>
-        <p>&copy; Colin Mitchell 2014, <a href="http://muffinlabs.com">http://muffinlabs.com</a></p>
+        <p>&copy; Colin Mitchell 2019, <a href="http://muffinlabs.com">http://muffinlabs.com</a></p>
       </footer>
     </div> <!-- /container -->
 
