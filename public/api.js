@@ -39,8 +39,8 @@ window.namey = {
   get : function(options) {
 	  var callback;
 	  var tmp_params = {};
-    //var host = "namey.muffinlabs.com";
-    var host = window.location.host;
+    var host = "namey.muffinlabs.com";
+    //var host = window.location.host;
     var query;
     
 	  if ( typeof(options) == "function" ) {
