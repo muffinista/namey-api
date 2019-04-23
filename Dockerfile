@@ -9,7 +9,6 @@ RUN bundle install
 
 COPY . /app
 
-ENV PORT 18080
-EXPOSE 18080
-CMD ["rackup", "namey_app.rb", "-o", "0.0.0.0", "-p", "18080"]
-#CMD ["puma", "config.ru", "-C", "puma.rb"]
+ENV PORT 18001
+EXPOSE 18001
+CMD ["puma", "config.ru", "-C", "puma.rb"]
