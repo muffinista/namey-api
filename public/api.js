@@ -81,7 +81,7 @@ window.namey = {
                   })
                   .join('&');
     
-	  window.fetch('//' + host + '/name.json?' + query)
+	  window.fetch('https://' + host + '/name.json?' + query)
           .then(function(d) { return d.json(); })
           .then(function(d) {
 	          if ( typeof(callback) == "function" ) {

@@ -16,12 +16,17 @@ class Hash
   end
 end
 
-configure do
-  enable :cross_origin
-end
-before do
-  response.headers['Access-Control-Allow-Origin'] = '*'
-end
+set :allow_origin, "*"
+set :allow_methods, "GET,HEAD,POST"
+set :allow_headers, "content-type,if-modified-since"
+set :expose_headers, "location,link"
+
+# configure do
+#   enable :cross_origin
+# end
+# before do
+#   response.headers['Access-Control-Allow-Origin'] = '*'
+# end
 
 get '/' do
   erb :index
