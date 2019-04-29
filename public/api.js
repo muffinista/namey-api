@@ -81,7 +81,7 @@ window.namey = {
                   })
                   .join('&');
     
-	  window.fetch('https://' + host + '/name.json?' + query, { mode: 'no-cors' })
+	  window.fetch('https://namey.muffinlabs.com/name.json?' + query, { mode: 'cors' })
           .then(function(d) { return d.json(); })
           .then(function(d) {
 	          if ( typeof(callback) == "function" ) {
