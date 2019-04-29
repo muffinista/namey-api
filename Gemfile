@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem "sqlite3"
 gem "sinatra", "~> 2.0.5"
+gem 'sinatra-cross_origin'
 
 group :development do
   gem "shotgun"

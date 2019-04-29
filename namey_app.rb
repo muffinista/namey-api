@@ -1,5 +1,7 @@
 require 'rubygems'
 require 'sinatra'
+require 'sinatra/cross_origin'
+
 require 'namey'
 require 'json'
 
@@ -13,7 +15,14 @@ class Hash
     self
   end
 end
-  
+
+configure do
+  enable :cross_origin
+end
+before do
+  response.headers['Access-Control-Allow-Origin'] = '*'
+end
+
 get '/' do
   erb :index
 end
