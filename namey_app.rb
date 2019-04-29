@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sinatra'
-require 'sinatra/cross_origin'
+#require 'sinatra/cross_origin'
 
 require 'namey'
 require 'json'
