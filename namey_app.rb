@@ -21,6 +21,9 @@ set :allow_methods, "GET,HEAD,POST"
 set :allow_headers, "content-type,if-modified-since"
 set :expose_headers, "location,link"
 
+@generator = Namey::Generator.new
+
+
 # configure do
 #   enable :cross_origin
 # end
@@ -33,8 +36,6 @@ get '/' do
 end
   
 get '/name.?:format?' do
-  @generator = Namey::Generator.new
-  
   opts = {
     :frequency => :common
   }.merge(params.to_h.symbolize_keys!)
