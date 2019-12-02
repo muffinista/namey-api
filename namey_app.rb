@@ -21,7 +21,7 @@ set :allow_methods, "GET,HEAD,POST"
 set :allow_headers, "content-type,if-modified-since"
 set :expose_headers, "location,link"
 
-@generator = Namey::Generator.new
+$generator = Namey::Generator.new
 
 
 # configure do
@@ -52,7 +52,7 @@ get '/name.?:format?' do
   count = 10 if count > 10
 
   names = 1.upto(count).collect do
-    @generator.generate(opts)
+    $generator.generate(opts)
   end.compact
 
   if params[:format] == "json"
