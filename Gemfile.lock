@@ -10,7 +10,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     mustermann (1.0.3)
-    puma (3.12.3)
+    puma (3.12.4)
     rack (2.2.2)
     rack-protection (2.0.5)
       rack
@@ -31,7 +31,7 @@ PLATFORMS
 
 DEPENDENCIES
   namey!
-  puma (~> 3.12.3)
+  puma (~> 3.12.4)
   shotgun
   sinatra (~> 2.0.5)
   sinatra-cors
