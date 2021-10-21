@@ -34,7 +34,7 @@ $generator = Namey::Generator.new
 get '/' do
   erb :index
 end
-  
+
 get '/name.?:format?' do
   opts = {
     :frequency => :common

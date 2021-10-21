@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git pull origin master
+git pull origin main
 
 NAME=$(basename $PWD)
 echo $NAME
