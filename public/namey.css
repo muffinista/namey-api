@@ -1,55 +1,84 @@
-.jumbotron {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
-.jumbotron h1 {
-  font-size: 48px;
-}
-.jumbotron p {
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 100;
+body {
+  font-size: 15px;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0 auto;
 }
 
-.custom_range_wrapper {
-  display: none;
+ul {
+  list-style: none;
+  padding-left: 0px;
 }
 
-form#name-results textarea, .biglabel {
-  color: black;
-  font-size: 110%;
+header > hgroup > h1 {
+  font-size: 1.2em;
 }
-.spinny {
-  display: none;
-  padding-left: 5px;
+header > hgroup {
+  padding-left: 1.0em;
 }
-
-#about { 
-  margin-top: 45px;
+header > nav > ul {
+  font-size: 0.9em;
+  margin-left: 0.5em;
+  display: flex;
 }
-.inputs-list {
-    list-style-type: none;
-    padding:0;
-    margin:0;
+header > nav > ul > li {
+  margin-right: 0.5em;
 }
 
+body > main, body > footer, body > #about {
+  padding-left: 1.0em;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 75em;
+  width: 100%;
+}
+
+main > section {
+  margin: 0 auto;
+  width: 100%;
+
+}
+main h1 {
+  font-size: 1.2em;
+}
+main h2 {
+  font-size: 1.1em;
+}
+
+section {
+  margin-bottom: 2.0em;
+}
+
+#about {
+  grid-column: 1 / span 2;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  width: 100%;
+}
 button {
-    margin-top: 10px;
+  font-size: 1.25em;
+  padding: 0.5em;
 }
-footer {
-    margin-top:20px;
-    padding-top:20px;
-    border-top: 1px solid #eee;
-}
-
 fieldset > div {
-  margin-bottom: 1rem;
+  margin-bottom: 2.0em;
 }
-fieldset > div > label {
-  margin-bottom: 0px;
+small {
+  display: block;
 }
-#name-params div.radio {
-  padding-top: 0px;
+@media (max-width: 1000px) {
+  main {
+    display: block;
+    padding-left: 1.0em;
+  }
+  textarea {
+    width: 95%;
+  }
 }
 
