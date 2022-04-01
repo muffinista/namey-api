@@ -8,5 +8,5 @@ group :development do
   gem "shotgun"
 end
 
-gem 'puma', '~> 5.6.2'
+gem 'puma', '~> 5.6.4'
 gem "namey", :git => "https://github.com/muffinista/namey.git"
