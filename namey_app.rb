@@ -24,12 +24,9 @@ set :expose_headers, "location,link"
 $generator = Namey::Generator.new
 
 
-# configure do
-#   enable :cross_origin
-# end
-# before do
-#   response.headers['Access-Control-Allow-Origin'] = '*'
-# end
+before do
+  return 'Eat me' if request.referer&.match?(/follower.co/)
+end
 
 get '/' do
   erb :index
