@@ -11,8 +11,8 @@ GEM
   specs:
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
-    nio4r (2.5.8)
-    puma (6.0.2)
+    nio4r (2.5.9)
+    puma (6.3.1)
       nio4r (~> 2.0)
     rack (2.2.6.4)
     rack-protection (3.0.5)
@@ -35,7 +35,7 @@ PLATFORMS
 
 DEPENDENCIES
   namey!
-  puma (~> 6.0.2)
+  puma (~> 6.3.1)
   shotgun
   sinatra (~> 3.0.5)
   sinatra-cors
