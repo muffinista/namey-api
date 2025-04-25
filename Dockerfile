@@ -1,9 +1,8 @@
-FROM ruby:2.7.4
+FROM ruby:3.3.8
 
 RUN apt-get update && apt-get install -y build-essential sqlite3 libsqlite3-dev
-# mysql-client libmysqlclient-dev default-libmysqlclient-dev
 
-RUN gem install bundler:1.17.3
+RUN gem install bundler:2.6.8
 
 WORKDIR /app
 ADD Gemfile* /app/

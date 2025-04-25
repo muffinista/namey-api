@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 gem "sqlite3"
-gem "sinatra", "~> 3.0.5"
+gem "sinatra", "~> 4.1.1"
 gem 'sinatra-cors'
 
 group :development do
   gem "shotgun"
 end
 
-gem 'puma', '~> 6.4.3'
+gem 'puma', '~> 6.6.0'
 gem "namey", :git => "https://github.com/muffinista/namey.git"

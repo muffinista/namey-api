@@ -1,33 +1,46 @@
 GIT
   remote: https://github.com/muffinista/namey.git
-  revision: 10e62cba0bab2603f95ad454f752c1dc93685461
+  revision: 0d29985a26fc20c3bc636d7ce48ede76f018236d
   specs:
-    namey (0.0.12)
-      sequel (~> 5.0.0)
+    namey (0.0.13)
+      sequel (~> 5.73.0)
       sqlite3
 
 GEM
   remote: https://rubygems.org/
   specs:
+    base64 (0.2.0)
+    bigdecimal (3.1.9)
+    logger (1.7.0)
+    mini_portile2 (2.8.8)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.3)
-    puma (6.4.3)
+    puma (6.6.0)
       nio4r (~> 2.0)
-    rack (2.2.8.1)
-    rack-protection (3.0.5)
-      rack
+    rack (3.1.13)
+    rack-protection (4.1.1)
+      base64 (>= 0.1.0)
+      logger (>= 1.6.0)
+      rack (>= 3.0.0, < 4)
+    rack-session (2.1.0)
+      base64 (>= 0.1.0)
+      rack (>= 3.0.0)
     ruby2_keywords (0.0.5)
-    sequel (5.0.0)
+    sequel (5.73.0)
+      bigdecimal
     shotgun (0.9.2)
       rack (>= 1.0)
-    sinatra (3.0.5)
+    sinatra (4.1.1)
+      logger (>= 1.6.0)
       mustermann (~> 3.0)
-      rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.0.5)
+      rack (>= 3.0.0, < 4)
+      rack-protection (= 4.1.1)
+      rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
     sinatra-cors (1.2.0)
-    sqlite3 (1.4.2)
+    sqlite3 (2.6.0)
+      mini_portile2 (~> 2.8.0)
     tilt (2.0.11)
 
 PLATFORMS
@@ -35,11 +48,11 @@ PLATFORMS
 
 DEPENDENCIES
   namey!
-  puma (~> 6.4.3)
+  puma (~> 6.6.0)
   shotgun
-  sinatra (~> 3.0.5)
+  sinatra (~> 4.1.1)
   sinatra-cors
   sqlite3
 
 BUNDLED WITH
-   1.17.3
+   2.6.8
