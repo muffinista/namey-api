@@ -20,6 +20,7 @@ set :allow_origin, "*"
 set :allow_methods, "GET,HEAD,POST"
 set :allow_headers, "content-type,if-modified-since"
 set :expose_headers, "location,link"
+set :host_authorization, { permitted_hosts: [] }
 
 $generator = Namey::Generator.new
 
