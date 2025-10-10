@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem "sqlite3"
-gem "sinatra", "~> 4.1.1"
+gem "sinatra", "~> 4.2.0"
 gem 'sinatra-cors'
 
 group :development do
